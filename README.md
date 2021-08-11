@@ -1,6 +1,6 @@
 # ARTHURBABO
 
-| Arthur Babo
-| Chinshuu Babo
-| Simsim Dust
-| Donggeonman Babo
+- Arthur Babo
+- Chinshuu Babo
+- Simsim Dust
+- Donggeonman Babo
