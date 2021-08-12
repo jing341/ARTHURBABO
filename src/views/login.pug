@@ -13,12 +13,4 @@ html(lang="en")
             input(type="text", placeholder="Username", name="username")
             input(type="password", placeholder="Password", name="password")
             input(type="password", placeholder="Confirm Password") 
-            button Sign Up
-
-        script(type="text/python")
-            from browser import document
-
-            def show_text(e):
-                document['output'].textContent = e.target.value;
-
-            document['text'].bind('input', show_text)
+            button Login

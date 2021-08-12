@@ -1,15 +1,17 @@
 import express from "express";
+import RootRouter from "./routers/root.routers";
+import { notFound } from "./controllers/root.controllers";
 
 const app = express();
-const port = 8000;
+const PORT = 8000;
 
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json({ extended: true }));
 app.set("view engine", "pug");
 app.set("views", __dirname + "/views");
 app.use("/public", express.static(__dirname + "/public"));
-app.get("/", (_, res) => res.render("home"));
-app.get("/signup", (_, res) => res.render("signup"));
-app.get("/*", (_, res) => res.render("404"));
 
-const handleListen = () => console.log(`Listening on http://localhost:${port}`);
+app.use("/", RootRouter);
+app.get("/*", notFound);
 
-app.listen(port, handleListen);
+app.listen(PORT, () => console.log(`Listening on http://localhost:${PORT}`));
